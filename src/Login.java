@@ -111,9 +111,10 @@ public class Login extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Boolean user1 = userName_jtf.getText().equals("小明")&&password_jtf.getText().equals("1");
 		Boolean user2 = userName_jtf.getText().equals("小华")&&password_jtf.getText().equals("2");
+		Boolean user3 = userName_jtf.getText().equals("小志")&&password_jtf.getText().equals("3");
 		if (e.getActionCommand() == "登录") {
 		
-			if(user1||user2){
+			if(user1||user2||user3){
 			System.out.println("登录成功");
 			JOptionPane.showMessageDialog(null, "登录成功！", "提示消息",
 					JOptionPane.WARNING_MESSAGE);
