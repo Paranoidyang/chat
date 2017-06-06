@@ -1,4 +1,3 @@
-
 /* 
  * 功能：聊天系统
  * 步骤1：登录界面的静态实现 
@@ -16,7 +15,6 @@ import utils.Utils;
 public class Login extends JFrame implements ActionListener {
 
 	// 定义组件
-
 	JPanel jp1, jp2, jp3, jp4 = null;
 	static JTextField userName_jtf = null;
 	static JPasswordField password_jtf = null;
@@ -109,23 +107,26 @@ public class Login extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Boolean user1 = userName_jtf.getText().equals("小明")&&password_jtf.getText().equals("1");
-		Boolean user2 = userName_jtf.getText().equals("小华")&&password_jtf.getText().equals("2");
-		Boolean user3 = userName_jtf.getText().equals("小志")&&password_jtf.getText().equals("3");
+		Boolean user1 = userName_jtf.getText().equals("小明")
+				&& password_jtf.getText().equals("1");
+		Boolean user2 = userName_jtf.getText().equals("小华")
+				&& password_jtf.getText().equals("2");
+		Boolean user3 = userName_jtf.getText().equals("小志")
+				&& password_jtf.getText().equals("3");
 		if (e.getActionCommand() == "登录") {
-		
-			if(user1||user2||user3){
-			System.out.println("登录成功");
-			JOptionPane.showMessageDialog(null, "登录成功！", "提示消息",
-					JOptionPane.WARNING_MESSAGE);
-			 
-			 //创建一个新界面
-			 Home home = new Home(userName_jtf.getText());
-			 
-			// 关闭当前界面
-			 dispose();
-			 
-			}else if (userName_jtf.getText().isEmpty()
+
+			if (user1 || user2 || user3) {
+				System.out.println("登录成功");
+				JOptionPane.showMessageDialog(null, "登录成功！", "提示消息",
+						JOptionPane.WARNING_MESSAGE);
+
+				// 创建一个新界面
+				Home home = new Home(userName_jtf.getText());
+
+				// 关闭当前界面
+				dispose();
+
+			} else if (userName_jtf.getText().isEmpty()
 					&& password_jtf.getText().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "请输入用户名和密码！", "提示消息",
 						JOptionPane.WARNING_MESSAGE);
@@ -136,7 +137,7 @@ public class Login extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "请输入密码！", "提示消息",
 						JOptionPane.WARNING_MESSAGE);
 			}
-		}  else if (e.getActionCommand() == "重置") {
+		} else if (e.getActionCommand() == "重置") {
 			clear();
 		}
 

@@ -1,11 +1,9 @@
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import utils.Utils;
@@ -40,7 +38,6 @@ public class Home extends JFrame {
 	public static String username;
 
 	public Home(final String user) {
-		
 		username = user;
 		JFrame frame = new JFrame();
 		frame.setLayout(new FlowLayout()); // 设置布局管理器
@@ -54,7 +51,6 @@ public class Home extends JFrame {
 		frame.setIconImage(new ImageIcon(this.getClass().getClassLoader().getResource("images/tittle.png")).getImage());
 		Container content = frame.getContentPane();// 获得JFrame的默认面板rootPane
 		content.setLayout(new FlowLayout());
-		
 		
 		JLabel jbl0 = new JLabel("昵称：");
 		JLabel jbl1 = new JLabel(user);
@@ -93,16 +89,11 @@ public class Home extends JFrame {
 		btChat = new JButton("进入聊天室");
 		panel02.add(btChat);
 		
-		
 		Border lineBorder = BorderFactory.createLineBorder(Color.gray);
 		Border border1 = BorderFactory.createTitledBorder(lineBorder, "个人信息");// 为该面板设置一个边框，将按钮，输入框包括起来
 		panel01.setBorder(border1);
 		
-		
-		
-		
 		btChat.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ClientUI client = new ClientUI(user);
