@@ -11,20 +11,16 @@ import utils.Utils;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 
-import client.ClientThread;
 import client.ClientUI;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
 
 public class Home extends JFrame {
 
@@ -33,7 +29,6 @@ public class Home extends JFrame {
 	JButton btChat;
 
 	static JFrame frame;
-	public ClientThread server;
 	public ClientUI ui;
 	public static String username;
 
