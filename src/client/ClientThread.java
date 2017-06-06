@@ -11,8 +11,9 @@ public class ClientThread extends Thread {
     Socket client;
     BufferedReader reader;
     PrintWriter writer;
-
-    public ClientThread(ClientUI ui) {
+    String username;
+    public ClientThread(ClientUI ui,String user) {
+    	username = user;//可以在run方法中使用
         this.ui = ui;
         try {
             client = new Socket("127.0.0.1", 1228);//这里设置连接服务器端的IP的端口
@@ -40,7 +41,7 @@ public class ClientThread extends Thread {
                 break;
             }
             if (msg != null && msg.trim() != "") {
-                println(">>" + msg);
+                println(msg);
             }
         }
     }

@@ -26,12 +26,9 @@ public class ClientUI extends JFrame {
 	public JTextArea taShow;
 	public ClientThread server;
 
-	public static void main(String[] args) {
-		ClientUI client = new ClientUI();
-	}
 
-	public ClientUI() {
-		super("客户端");
+	public ClientUI(final String user) {
+		super(user);
 		btStart = new JButton("启动连接");
 		btSend = new JButton("发送信息");
 		tfSend = new JTextField(10);
@@ -41,12 +38,12 @@ public class ClientUI extends JFrame {
 
 		btStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				server = new ClientThread(ClientUI.this);
+				server = new ClientThread(ClientUI.this,user);
 			}
 		});
 		btSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				server.sendMsg(tfSend.getText());
+				server.sendMsg(user+"："+tfSend.getText());
 				tfSend.setText("");
 			}
 		});

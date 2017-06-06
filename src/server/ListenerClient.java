@@ -34,7 +34,7 @@ public class ListenerClient extends Thread {
                 break;
             }
             if (msg != null && msg.trim() != "") {
-                println(">>" + msg);
+                println(msg);
             }
         }
     }
